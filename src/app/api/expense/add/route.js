@@ -3,6 +3,8 @@ import { User } from "@/lib/models";
 
 export async function POST(req) {
   const { name, amount, budgetId, id } = await req.json();
+  console.log(budgetId);
+
   try {
     connectmongoDB();
 

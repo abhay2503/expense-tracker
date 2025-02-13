@@ -3,6 +3,9 @@ import { User } from "@/lib/models";
 
 export async function DELETE(req, res) {
   const { id, expenseid } = await req.json();
+
+  console.log(id + " " + expenseid);
+
   try {
     connectmongoDB();
 

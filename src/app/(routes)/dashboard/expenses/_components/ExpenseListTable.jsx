@@ -25,7 +25,7 @@ const ExpenseListTable = ({ expensesList, refreshData }) => {
         if (!confirmDelete) {
 
             return;
-        }
+        }   
         try {
 
             const response = await fetch(`${NEXT_URI}/api/expense/delete`, {

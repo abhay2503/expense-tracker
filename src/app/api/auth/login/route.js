@@ -24,7 +24,7 @@ export async function POST(req) {
     console.log(user);
 
     return Response.json(
-      { success: "Logged In", _id: user._id, name: user.name },
+      { success: "Logged In", _id: user._id, name: user.name, email: email },
       { status: 200 }
     );
   } catch (err) {

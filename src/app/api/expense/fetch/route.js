@@ -5,6 +5,8 @@ export async function POST(req, res) {
   try {
     const { id } = await req.json(); // Get user ID from the query params
 
+    console.log("hello");
+
     if (!id) {
       return Response.json({ error: "User ID is required" }, { status: 401 });
     }

@@ -3,6 +3,11 @@ import { User } from "@/lib/models";
 
 export async function POST(req) {
   const { name, amount, emojiIcon, id, budgetId } = await req.json();
+
+  console.log(
+    name + " " + amount + " " + emojiIcon + " " + id + " " + budgetId
+  );
+
   try {
     connectmongoDB();
     const updatedUser = await User.findOneAndUpdate(
@@ -17,7 +22,7 @@ export async function POST(req) {
       { new: true, projection: { budgets: 1 } } // Return the updated budgets array
     );
 
-    console.log(updateBudget);
+    console.log(updatedUser);
 
     if (!updatedUser) {
       return Response.json({ error: "Budget not Found" }, { status: 401 });
@@ -30,6 +35,8 @@ export async function POST(req) {
       { status: 201 }
     );
   } catch (err) {
+    console.log(err);
+
     return Response.json({ error: err }, { status: 401 });
   }
 }

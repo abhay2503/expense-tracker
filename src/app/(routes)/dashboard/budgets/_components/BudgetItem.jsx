@@ -6,7 +6,9 @@ const BudgetItem = ({ budget }) => {
     const calculateProgressPerc = () => {
         // (spend/total)*100
         const perc = (budget.totalSpend / budget.amount) * 100
+        console.log(perc.toFixed(2));
         return perc.toFixed(2)
+
     }
 
     return (

@@ -2,6 +2,8 @@ import connectmongoDB from "@/lib/dbConnect";
 import { User } from "@/lib/models";
 
 export async function POST(req, res) {
+  console.log("hello");
+
   const { id } = await req.json();
   console.log(id);
 
